@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+   const baseUrl = "http://localhost:3000/users"
 
-    const exampleFetchAdapter = new fetchAdapter("http://localhost:3000/")
+    const getUsers = () => {
+        fetch(baseUrl)
+        .then(response => response.json())
+        .then(users => console.log(users))
+    }
+    
 
-    exampleFetchAdapter.get("users", users => users.forEach(console.log))
-
+    getUsers()
 })
+
+    // const exampleFetchAdapter = new fetchAdapter("http://localhost:3000/")
+
+    // exampleFetchAdapter.get("users", users => users.forEach(console.log))
